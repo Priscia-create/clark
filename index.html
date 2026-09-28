@@ -1,0 +1,500 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>shared space</title>
+  <meta name="description" content="movies, series, music" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600;700;800&family=Cinzel:wght@600;700&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="/css/main.css" />
+</head>
+<body class="stephane-theme">
+  <div id="app">
+    <!-- Spider-Man Web Particle Canvas (non-blocking) -->
+    <canvas id="particles-canvas"></canvas>
+
+    <!-- 1. LANDING PAGE — MINIMALIST STEPHANAS AND STEPHANELLE VERSE -->
+    <div id="landing-page" class="page active">
+      <div class="landing-minimal-wrap">
+        <h1 class="landing-pure-title">Stephanas and stephanelle verse</h1>
+        
+        <div class="passcode-unlock-wrap">
+          <input type="password" id="login-password" class="clean-input passcode-field" placeholder="Enter secret code..." autocomplete="off" />
+          <div id="passcode-hint-msg" class="passcode-hint-msg">Enter correct code to unlock</div>
+          
+          <button class="clean-btn-primary enter-unlocked-btn" id="btn-enter-unlocked" type="button" style="display: none;">
+            Enter
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- 2. MAIN APPLICATION -->
+    <div id="main-app" class="main-app" style="display: none;">
+      
+      <!-- Top Navigation -->
+      <header class="app-nav">
+        <div class="nav-left">
+          <!-- Red Star placed to the left of shared space banner -->
+          <div class="nav-brand-banner">
+            <svg class="nav-red-star" viewBox="0 0 24 24" fill="#ff003c">
+              <polygon points="12,2 15.09,8.26 22,9.27 17,14.14 18.18,21.02 12,17.77 5.82,21.02 7,14.14 2,9.27 8.91,8.26" />
+            </svg>
+            <span class="brand-banner-text">shared space</span>
+          </div>
+        </div>
+
+        <nav class="nav-center">
+          <button class="nav-item active" data-page="home" type="button">Home</button>
+          <button class="nav-item" data-page="movies" type="button">Movies</button>
+          <button class="nav-item" data-page="music" type="button">Music</button>
+          <button class="nav-item" data-page="chat" type="button">Chat</button>
+          <button class="nav-item" data-page="activity" type="button">Activity</button>
+        </nav>
+
+        <div class="nav-right">
+          <button id="btn-sender-toggle" class="sender-toggle-btn" type="button" title="Click to toggle who is posting">
+            <span class="toggle-prefix">Posting as:</span>
+            <span class="toggle-active-name" id="sender-display-name">Me</span>
+          </button>
+          
+          <button id="btn-exit-app" class="exit-app-btn" type="button" title="Back to lock screen">
+            Exit
+          </button>
+        </div>
+      </header>
+
+      <!-- Page Views Container -->
+      <main class="page-viewport">
+        
+        <!-- PAGE 1: HOME (STEPHANEVERSE) -->
+        <section id="page-home" class="view-page active">
+          <!-- 3D Spiders Overlay for Stephaneverse -->
+          <div id="stephaneverse-spiders-container" class="stephaneverse-spiders-holder"></div>
+
+          <div class="home-grid">
+            
+            <!-- Hero Welcome Card -->
+            <div class="home-hero-card">
+              <div class="hero-left">
+                <h2 class="hero-title">le roi stephane verse</h2>
+                <p class="hero-desc">movies, series, music</p>
+              </div>
+              <div class="hero-actions">
+                <button class="clean-btn-primary" data-nav="movies" type="button">Movies</button>
+                <button class="clean-btn-secondary" data-nav="music" type="button">Music</button>
+              </div>
+            </div>
+
+            <!-- 3D Basketball Display: Seamless viewport without wrapping box, ball inside 3D transparent cube -->
+            <div class="basketball-floating-area">
+              <div id="basketball-3d-container" class="basketball-canvas-holder"></div>
+            </div>
+
+            <!-- Featured Movie: Frameless without wrapping box -->
+            <div class="featured-movie-frameless">
+              <div class="featured-movie-header-row">
+                <h3>Featured Movie</h3>
+                <button class="link-btn" data-nav="movies" type="button">View all</button>
+              </div>
+              <div class="featured-movie-preview" id="home-movie-cover">
+                <div class="movie-cover-details">
+                  <h4 id="home-movie-title">Interstellar</h4>
+                </div>
+              </div>
+              <button class="clean-btn-primary full-btn" id="btn-home-watch" type="button">Watch Together</button>
+            </div>
+
+            <!-- Mini Music Card -->
+            <div class="clean-card mini-music-card">
+              <div class="card-title-row">
+                <h3>Music</h3>
+                <button class="link-btn" data-nav="music" type="button">Open player</button>
+              </div>
+              <div class="mini-music-body">
+                <div class="mini-disc-art" id="mini-disc-art"></div>
+                <div class="mini-track-meta">
+                  <h4 id="mini-track-name">Night Drive (Lo-Fi)</h4>
+                  <p id="mini-track-artist">Stephane & Stephanelle</p>
+                </div>
+                <button class="mini-play-toggle" id="mini-play-btn" type="button">Play</button>
+              </div>
+            </div>
+
+            <!-- Quick Messages Card -->
+            <div class="clean-card mini-chat-card">
+              <div class="card-title-row">
+                <h3>Latest Messages</h3>
+                <button class="link-btn" data-nav="chat" type="button">Open chat</button>
+              </div>
+              <div class="home-chat-list" id="home-chat-list">
+                <div class="empty-chat-hint">No messages yet. Send your first message in Chat.</div>
+              </div>
+            </div>
+
+          </div>
+        </section>
+
+        <!-- PAGE 2: MOVIES -->
+        <section id="page-movies" class="view-page">
+          <div class="movies-container">
+            <div class="page-top-bar">
+              <div>
+                <h2>Movies</h2>
+                <p class="page-sub">Plan movies for the week, watch together in sync, or browse the list.</p>
+              </div>
+              <div class="tab-pill-group">
+                <button class="tab-pill active" data-tab="weekly" type="button">Weekly Schedule</button>
+                <button class="tab-pill" data-tab="all" type="button">All Movies</button>
+                <button class="tab-pill" data-tab="watch" type="button">Watch Together</button>
+                <button class="tab-pill" data-tab="guess" type="button">Guess Game</button>
+              </div>
+            </div>
+
+            <!-- Subtab: Weekly Schedule -->
+            <div class="sub-tab-panel active" id="tab-weekly-panel">
+              <div class="weekly-bar-header">
+                <p>Plan what to watch each day of the week.</p>
+                <button class="clean-btn-primary" id="btn-open-add-movie" type="button">+ Add Movie</button>
+              </div>
+              <div class="weekly-cards-grid" id="weekly-schedule-grid"></div>
+            </div>
+
+            <!-- Subtab: All Movies -->
+            <div class="sub-tab-panel" id="tab-all-panel">
+              <div class="library-search-bar">
+                <input type="text" id="movie-search-box" class="clean-input" placeholder="Search movies by title..." />
+              </div>
+              <div class="movies-catalog-grid" id="all-movies-grid"></div>
+            </div>
+
+            <!-- Subtab: Watch Together (Real-time Synchronized In-App Movie Window) -->
+            <div class="sub-tab-panel" id="tab-watch-panel">
+              <div class="watch-layout">
+                <div class="video-main-box">
+                  <!-- Session Sync Notification Banner -->
+                  <div class="session-sync-banner" id="video-sync-banner">
+                    <span class="sync-live-pulse"></span>
+                    <span id="video-sync-status-text">Shared Session Active — Playing in sync for both of you</span>
+                  </div>
+
+                  <div class="video-holder">
+                    <video id="shared-video-player" controls playsinline preload="auto">
+                      <source src="https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4" type="video/mp4" />
+                    </video>
+                    <iframe id="shared-video-iframe" class="shared-video-iframe" style="display: none;" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                  </div>
+                  
+                  <div class="video-url-dock">
+                    <input type="text" id="direct-stream-input" class="clean-input" placeholder="Paste any movie link, YouTube URL, or stream link..." />
+                    <button class="clean-btn-primary" id="btn-load-stream" type="button">Play</button>
+                    <button class="clean-btn-secondary" id="btn-toggle-player-mode" type="button" title="Switch player engine">Direct / Embed</button>
+                    <label class="clean-btn-secondary file-picker-label" title="Load movie from local file">
+                      <span>Load Video File</span>
+                      <input type="file" id="local-file-picker" accept="video/*" style="display: none;" />
+                    </label>
+                  </div>
+
+                  <!-- Real-Time YouTube Search & Watch Browser (Clean, no filters, no extra captions) -->
+                  <div class="youtube-browser-container" id="youtube-search-window">
+                    <div class="youtube-browser-header">
+                      <div class="youtube-browser-title-box">
+                        <h4 class="youtube-browser-title">YouTube Search</h4>
+                      </div>
+                    </div>
+
+                    <div class="youtube-search-bar-wrap">
+                      <input type="text" id="youtube-search-input" class="youtube-search-input" placeholder="Search any movie, music, trailer, or video on YouTube..." autocomplete="off" />
+                      <button class="clean-btn-primary" id="btn-exec-youtube-search" type="button">Search</button>
+                    </div>
+
+                    <div class="youtube-browser-grid" id="youtube-video-grid">
+                      <!-- Populated dynamically with live real YouTube results -->
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Clean Chat for Watch Session -->
+                <div class="watch-chat-box">
+                  <div class="watch-chat-header">
+                    <h4>Chat</h4>
+                  </div>
+                  <div class="watch-chat-messages" id="watch-chat-stream">
+                    <div class="empty-chat-hint">Chat while watching together.</div>
+                  </div>
+                  <div class="watch-chat-input-row">
+                    <input type="text" id="watch-chat-text" class="clean-input" placeholder="Type a message..." autocomplete="off" />
+                    <button class="clean-btn-primary" id="btn-send-watch-chat" type="button">Send</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Subtab: Guess Game (Smooth, Dynamic, Less Boxy) -->
+            <div class="sub-tab-panel" id="tab-guess-panel">
+              <div class="guess-game-wrapper">
+                <div class="guess-stats-row smooth-stats">
+                  <div class="guess-stat-pill">
+                    <span class="stat-number" id="guess-score-correct">0</span>
+                    <span class="stat-name">Correct</span>
+                  </div>
+                  <div class="guess-stat-pill">
+                    <span class="stat-number" id="guess-score-total">0</span>
+                    <span class="stat-name">Total Guesses</span>
+                  </div>
+                  <div class="guess-stat-pill">
+                    <span class="stat-number" id="guess-score-streak">0</span>
+                    <span class="stat-name">Streak</span>
+                  </div>
+                </div>
+
+                <div class="guess-cards-feed smooth-feed" id="guess-cards-feed"></div>
+              </div>
+            </div>
+
+          </div>
+
+          <!-- Add Movie Modal (Link Version or Load from File + Image Version Too, No Added By) -->
+          <div id="add-movie-modal" class="clean-modal" style="display: none;">
+            <div class="modal-backdrop" id="modal-backdrop"></div>
+            <div class="modal-card">
+              <div class="modal-title-row">
+                <h3>Add a Movie</h3>
+                <button class="close-x-btn" id="btn-close-modal" type="button">✕</button>
+              </div>
+
+              <div class="form-vertical">
+                <label>Movie Title</label>
+                <input type="text" id="modal-movie-title" class="clean-input" placeholder="e.g. Across the Spider-Verse" />
+
+                <label>Day of the Week</label>
+                <select id="modal-movie-day" class="clean-select">
+                  <option value="mon">Monday</option>
+                  <option value="tue">Tuesday</option>
+                  <option value="wed">Wednesday</option>
+                  <option value="thu">Thursday</option>
+                  <option value="fri">Friday</option>
+                  <option value="sat">Saturday</option>
+                  <option value="sun">Sunday</option>
+                </select>
+
+                <!-- Movie Video Source: URL or Local File -->
+                <div class="modal-field-group">
+                  <label>Movie Video Source</label>
+                  <input type="text" id="modal-movie-url" class="clean-input" placeholder="Paste movie link or stream URL (YouTube, MP4, WebM)..." />
+                  <div class="modal-file-attach-row">
+                    <span class="attach-divider-label">or</span>
+                    <label class="clean-btn-secondary modal-file-label">
+                      <span>Load from Video File</span>
+                      <input type="file" id="modal-movie-file-picker" accept="video/*" style="display: none;" />
+                    </label>
+                    <span id="modal-video-filename-tag" class="loaded-file-tag" style="display: none;"></span>
+                  </div>
+                </div>
+
+                <!-- Poster Image Source: URL or Local Image File -->
+                <div class="modal-field-group">
+                  <label>Movie Poster / Image</label>
+                  <input type="text" id="modal-movie-poster" class="clean-input" placeholder="Poster image URL (Optional)..." />
+                  <div class="modal-file-attach-row">
+                    <span class="attach-divider-label">or</span>
+                    <label class="clean-btn-secondary modal-file-label">
+                      <span>Load Poster Image</span>
+                      <input type="file" id="modal-poster-file-picker" accept="image/*" style="display: none;" />
+                    </label>
+                    <span id="modal-poster-filename-tag" class="loaded-file-tag" style="display: none;"></span>
+                  </div>
+                  <!-- Live thumbnail preview if loaded -->
+                  <div id="modal-poster-preview-holder" class="modal-poster-preview-holder" style="display: none;">
+                    <img id="modal-poster-preview-img" src="" alt="Poster preview" />
+                  </div>
+                </div>
+
+                <div class="modal-actions-right">
+                  <button class="clean-btn-secondary" id="btn-cancel-modal" type="button">Cancel</button>
+                  <button class="clean-btn-primary" id="btn-save-movie" type="button">Save Movie</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- PAGE 3: MUSIC (PRISCIAVERSE — PEAK MUSIC HEEEERE) -->
+        <section id="page-music" class="view-page prisciaverse-music-theme">
+          <!-- Animated Moving Sakura Petals Container -->
+          <div id="sakura-ambient-container" class="sakura-ambient-container"></div>
+          <div class="priscia-ambient-blur"></div>
+          
+          <div class="music-container">
+            <div class="page-top-bar priscia-bar">
+              <div>
+                <h2 class="priscia-title">PrisciaVerse</h2>
+                <p class="priscia-sub">peak music heeeere</p>
+              </div>
+            </div>
+
+            <!-- Session Music Sync Notification Banner -->
+            <div class="session-sync-banner music-sync-banner" id="music-sync-banner">
+              <span class="sync-live-pulse"></span>
+              <span id="music-sync-status-text">Shared Listening Session Active — Playing in sync for both of you</span>
+            </div>
+
+            <div class="music-layout priscia-layout">
+              <!-- Player on Left (Smooth blurred background, no shadow box) -->
+              <div class="priscia-player-panel">
+                <div class="vinyl-disc-spin gothic-vinyl" id="music-vinyl">
+                  <div class="vinyl-center-art" id="vinyl-cover"></div>
+                  <div class="gothic-disc-ring"></div>
+                </div>
+
+                <div class="track-details-block">
+                  <h3 id="current-track-title" class="priscia-track-name">Night Drive (Lo-Fi)</h3>
+                  <p id="current-track-artist">Stephane & Stephanelle</p>
+                </div>
+
+                <!-- Pink Gothic Audio Visualizer -->
+                <div class="gothic-visualizer-container" id="gothic-audio-visualizer"></div>
+
+                <div class="scrub-line">
+                  <span id="audio-time-current" class="time-label">0:00</span>
+                  <input type="range" id="audio-progress" class="clean-slider gothic-slider" min="0" max="100" value="0" />
+                  <span id="audio-time-total" class="time-label">0:00</span>
+                </div>
+
+                <div class="player-controls-row gothic-controls">
+                  <button class="ctrl-icon-btn gothic-btn" id="btn-audio-prev" type="button">◀◀</button>
+                  <button class="ctrl-icon-btn main-play gothic-play-btn" id="btn-audio-play" type="button">Play</button>
+                  <button class="ctrl-icon-btn gothic-btn" id="btn-audio-next" type="button">▶▶</button>
+                </div>
+
+                <div class="volume-row">
+                  <span class="vol-text">Volume</span>
+                  <input type="range" id="audio-volume" class="clean-slider gothic-slider" min="0" max="100" value="80" />
+                </div>
+              </div>
+
+              <!-- Playlist & Direct Upload / Spotify Link on Right -->
+              <div class="priscia-playlist-panel">
+                
+                <!-- Quick Upload & Spotify Integration Section -->
+                <div class="music-quick-actions-bar">
+                  <label class="clean-btn-primary upload-song-btn-direct">
+                    <span>Upload Song (.mp3)</span>
+                    <input type="file" id="direct-audio-file-input" accept="audio/*" style="display: none;" />
+                  </label>
+                  <button class="clean-btn-secondary" id="btn-toggle-add-song" type="button">+ Add Web Track</button>
+                </div>
+
+                <!-- In-App Spotify Player — Log in directly inside the player below -->
+                <div class="spotify-link-dock">
+                  <input type="text" id="spotify-link-input" class="clean-input" placeholder="Paste Spotify track, album, or playlist link..." />
+                  <button id="btn-open-spotify" class="spotify-action-btn" type="button">Load</button>
+                  <button id="btn-toggle-spotify-window" class="clean-btn-secondary" type="button" style="white-space: nowrap;">Toggle Player</button>
+                </div>
+
+                <!-- Spotify Embedded Player (login happens directly inside here) -->
+                <div id="spotify-inapp-container" class="spotify-inapp-container" style="display: block;">
+                  <div class="spotify-inapp-header">
+                    <div class="spotify-inapp-title">
+                      <svg viewBox="0 0 24 24" width="18" height="18" fill="#1ed760">
+                        <path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm5.516 17.31c-.22.36-.684.475-1.045.255-2.866-1.75-6.474-2.146-10.724-1.176-.41.093-.815-.164-.908-.573-.093-.41.164-.816.573-.908 4.673-1.068 8.665-.615 11.85 1.33.36.22.474.685.254 1.072zm1.47-3.27c-.276.45-.86.593-1.31.318-3.28-2.015-8.28-2.599-12.16-1.422-.507.153-1.043-.136-1.196-.643-.153-.507.136-1.043.643-1.196 4.434-1.346 9.94-.7 13.705 1.633.45.275.594.86.318 1.31zm.13-3.41c-3.933-2.336-10.422-2.55-14.19-1.405-.603.183-1.246-.16-1.43-.762-.183-.602.16-1.246.763-1.43 4.333-1.315 11.5-1.064 16.024 1.623.542.32.72 1.02.4 1.562-.32.542-1.02.72-1.567.412z"/>
+                      </svg>
+                      <span>Spotify Player</span>
+                      <span class="spotify-inapp-badge">In-App</span>
+                    </div>
+                    <div class="spotify-window-actions">
+                      <button id="btn-minimize-spotify" class="spotify-ctrl-btn" type="button" title="Minimize / Expand">--</button>
+                    </div>
+                  </div>
+
+                  <p class="spotify-inapp-login-hint">Click play on any track to log in directly inside the player. No redirects needed.</p>
+
+                  <div class="spotify-iframe-wrapper" id="spotify-iframe-wrapper">
+                    <iframe id="spotify-player-iframe" src="https://open.spotify.com/embed/playlist/37i9dQZF1DXcBWIGoYBM5M?utm_source=generator&theme=0" width="100%" height="380" frameborder="0" allowtransparency="true" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+                  </div>
+                </div>
+
+                <!-- Add Track Box (Collapsible) -->
+                <div id="add-song-panel" class="add-song-panel gothic-add-panel" style="display: none;">
+                  <div class="form-vertical">
+                    <label>Song Title</label>
+                    <input type="text" id="new-song-title" class="clean-input" placeholder="e.g. Sunflower" />
+
+                    <label>Artist</label>
+                    <input type="text" id="new-song-artist" class="clean-input" placeholder="e.g. Post Malone" />
+
+                    <label>Audio URL (MP3 Link)</label>
+                    <input type="text" id="new-song-url" class="clean-input" placeholder="Direct MP3 link..." />
+
+                    <label>Artwork Image URL (Optional)</label>
+                    <input type="text" id="new-song-art" class="clean-input" placeholder="Cover image URL..." />
+
+                    <button class="clean-btn-primary gothic-save-btn" id="btn-save-song" type="button">Add Track</button>
+                  </div>
+                </div>
+
+                <div class="playlist-header priscia-p-header">
+                  <h3 class="priscia-h3">Playlist</h3>
+                </div>
+
+                <div class="songs-list-scroll priscia-scroll" id="songs-list-items"></div>
+              </div>
+            </div>
+
+            <audio id="audio-element" style="display: none;"></audio>
+          </div>
+        </section>
+
+        <!-- PAGE 4: CHAT (Clean, ready for real messages) -->
+        <section id="page-chat" class="view-page">
+          <div class="chat-container">
+            <div class="page-top-bar">
+              <div>
+                <h2>Chat</h2>
+                <p class="page-sub">Direct conversation between Stephane and Me.</p>
+              </div>
+            </div>
+
+            <div class="clean-card chat-window-card">
+              <div class="chat-messages-container" id="full-chat-messages">
+                <div class="empty-chat-welcome" id="empty-chat-welcome">
+                  No messages yet. Send a real message below.
+                </div>
+              </div>
+              
+              <div class="chat-input-row">
+                <div class="chat-sender-pill" id="chat-sender-pill" title="Click to toggle sender">
+                  <span id="chat-current-sender">Me</span>
+                </div>
+                <input type="text" id="chat-input-text" class="clean-input" placeholder="Write a real message..." autocomplete="off" />
+                <button class="clean-btn-primary" id="btn-send-chat" type="button">Send</button>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- PAGE 5: ACTIVITY -->
+        <section id="page-activity" class="view-page">
+          <div class="activity-container">
+            <div class="page-top-bar">
+              <div>
+                <h2>Activity</h2>
+                <p class="page-sub">A log of everything you both have watched, added, and shared.</p>
+              </div>
+            </div>
+
+            <div class="clean-card activity-feed-card">
+              <div class="activity-items-list" id="activity-items-list"></div>
+            </div>
+          </div>
+        </section>
+
+      </main>
+    </div>
+  </div>
+
+  <script type="module" src="/js/main.js"></script>
+</body>
+</html>

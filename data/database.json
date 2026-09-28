@@ -1,0 +1,300 @@
+{
+  "chat": [
+    {
+      "id": "chat-init-1",
+      "sender": "stephane",
+      "senderName": "Stephane",
+      "text": "Welcome to our shared space. Ready for movie night.",
+      "time": "2026-09-27T21:45:05.600Z"
+    },
+    {
+      "id": "chat-init-2",
+      "sender": "me",
+      "senderName": "Stephanelle",
+      "text": "Yes! Picked out some good tracks and movies for this week.",
+      "time": "2026-09-27T22:15:05.606Z"
+    },
+    {
+      "id": "chat-1790549145928",
+      "sender": "stephane",
+      "senderName": "Stephane",
+      "text": "Testing real-time shared communication",
+      "time": "2026-09-27T22:45:45.928Z"
+    },
+    {
+      "id": "test-sync-1",
+      "sender": "me",
+      "senderName": "Stephanelle",
+      "text": "Cross-browser sync works!",
+      "time": "2026-09-27T22:47:03.398Z"
+    },
+    {
+      "id": "chat-1790549550806",
+      "sender": "stephane",
+      "senderName": "Stephane",
+      "text": "Chat system database persistent test",
+      "time": "2026-09-27T22:52:30.806Z"
+    },
+    {
+      "id": "chat-1790549935419-urekh",
+      "sender": "me",
+      "senderName": "Stephanelle",
+      "text": "Hey Stephanelle, movie night tonight?",
+      "time": "2026-09-27T22:58:55.419Z",
+      "instanceId": "inst-1790549465793-eknjhz"
+    },
+    {
+      "id": "chat-1790552644061-2ufof",
+      "sender": "me",
+      "senderName": "Stephanelle",
+      "text": "hey",
+      "time": "2026-09-27T23:44:04.061Z",
+      "instanceId": "inst-1790552598113-css6hk"
+    },
+    {
+      "id": "chat-1790552666588-c3j2o",
+      "sender": "stephane",
+      "senderName": "Stephane",
+      "text": "yo",
+      "time": "2026-09-27T23:44:26.588Z",
+      "instanceId": "inst-1790549465793-eknjhz"
+    },
+    {
+      "id": "test-single-1790554204332",
+      "sender": "stephane",
+      "senderName": "Stephane",
+      "text": "Single message test",
+      "time": "2026-09-28T00:10:04.349Z"
+    },
+    {
+      "id": "chat-1790555791746-623qb",
+      "sender": "me",
+      "senderName": "Stephanelle",
+      "text": "hey",
+      "time": "2026-09-28T00:36:31.746Z",
+      "instanceId": "inst-1790555696285-d3wlc4"
+    },
+    {
+      "id": "chat-1790555803782-r0jym",
+      "sender": "stephane",
+      "senderName": "Stephane",
+      "text": "hey",
+      "time": "2026-09-28T00:36:43.782Z",
+      "instanceId": "inst-1790555696285-d3wlc4"
+    },
+    {
+      "id": "chat-1790555809698-6if0e",
+      "sender": "stephane",
+      "senderName": "Stephane",
+      "text": "yooooo",
+      "time": "2026-09-28T00:36:49.698Z",
+      "instanceId": "inst-1790555696285-d3wlc4"
+    },
+    {
+      "id": "chat-1790555813734-1kkbn",
+      "sender": "me",
+      "senderName": "Stephanelle",
+      "text": "yo",
+      "time": "2026-09-28T00:36:53.734Z",
+      "instanceId": "inst-1790555696285-d3wlc4"
+    },
+    {
+      "id": "chat-1790555980506-01fro",
+      "sender": "me",
+      "senderName": "Stephanelle",
+      "text": "ho",
+      "time": "2026-09-28T00:39:40.506Z",
+      "instanceId": "inst-1790555696285-d3wlc4"
+    },
+    {
+      "id": "chat-1790555985411-w0te2",
+      "sender": "stephane",
+      "senderName": "Stephane",
+      "text": "h",
+      "time": "2026-09-28T00:39:45.411Z",
+      "instanceId": "inst-1790555696285-d3wlc4"
+    }
+  ],
+  "activity": [
+    {
+      "id": "act-1790555985425-fm66r",
+      "text": "Stephane: \"h\"",
+      "time": "2026-09-28T00:39:45.425Z",
+      "instanceId": "inst-1790555696285-d3wlc4"
+    },
+    {
+      "id": "act-1790555980521-8777r",
+      "text": "Stephanelle: \"ho\"",
+      "time": "2026-09-28T00:39:40.521Z",
+      "instanceId": "inst-1790555696285-d3wlc4"
+    },
+    {
+      "id": "act-1790555813751-n3bix",
+      "text": "Stephanelle: \"yo\"",
+      "time": "2026-09-28T00:36:53.751Z",
+      "instanceId": "inst-1790555696285-d3wlc4"
+    },
+    {
+      "id": "act-1790555809713-0mm4b",
+      "text": "Stephane: \"yooooo\"",
+      "time": "2026-09-28T00:36:49.713Z",
+      "instanceId": "inst-1790555696285-d3wlc4"
+    },
+    {
+      "id": "act-1790555803800-2juat",
+      "text": "Stephane: \"hey\"",
+      "time": "2026-09-28T00:36:43.800Z",
+      "instanceId": "inst-1790555696285-d3wlc4"
+    },
+    {
+      "id": "act-1790555791759-euhz8",
+      "text": "Stephanelle: \"hey\"",
+      "time": "2026-09-28T00:36:31.759Z",
+      "instanceId": "inst-1790555696285-d3wlc4"
+    },
+    {
+      "id": "act-1790552684046-7qeja",
+      "text": "Midnight Starlight was removed by Stephane",
+      "time": "2026-09-27T23:44:44.046Z"
+    },
+    {
+      "id": "act-1790552683063-fw78k",
+      "text": "Golden Hour Melody was removed by Stephane",
+      "time": "2026-09-27T23:44:43.063Z"
+    },
+    {
+      "id": "act-1790552681988-fgnxz",
+      "text": "Night Drive (Lo-Fi) was removed by Stephane",
+      "time": "2026-09-27T23:44:41.988Z"
+    },
+    {
+      "id": "act-1790552666604-j431j",
+      "text": "Stephane: \"yo\"",
+      "time": "2026-09-27T23:44:26.604Z"
+    },
+    {
+      "id": "act-1790552644080-idfml",
+      "text": "Stephanelle: \"hey\"",
+      "time": "2026-09-27T23:44:04.080Z"
+    },
+    {
+      "id": "act-1790549935588-6sdua",
+      "text": "Stephanelle: \"Hey Stephanelle, movie night ton...\"",
+      "time": "2026-09-27T22:58:55.589Z"
+    },
+    {
+      "id": "act-1790549550850",
+      "text": "Activity log verified and saved",
+      "time": "2026-09-27T22:52:30.850Z"
+    },
+    {
+      "id": "act-init-1",
+      "text": "Shared space database initialized",
+      "time": "2026-09-27T22:45:05.606Z"
+    }
+  ],
+  "movies": {
+    "weekly": {
+      "mon": {
+        "id": "m-1",
+        "title": "Interstellar",
+        "genre": "Sci-Fi / Drama",
+        "addedBy": "stephane",
+        "addedAt": "2026-09-27T22:45:05.607Z",
+        "url": "https://vjs.zencdn.net/v/oceans.mp4",
+        "poster": "https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=800&auto=format&fit=crop&q=80",
+        "watched": false,
+        "favorite": true
+      },
+      "tue": null,
+      "wed": {
+        "id": "m-2",
+        "title": "La La Land",
+        "genre": "Romance / Music",
+        "addedBy": "me",
+        "addedAt": "2026-09-27T22:45:05.607Z",
+        "url": "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4",
+        "poster": "https://images.unsplash.com/photo-1518709268805-4e9042af9f23?w=800&auto=format&fit=crop&q=80",
+        "watched": false,
+        "favorite": false
+      },
+      "thu": null,
+      "fri": {
+        "id": "m-3",
+        "title": "About Time",
+        "genre": "Romance / Comedy",
+        "addedBy": "stephane",
+        "addedAt": "2026-09-27T22:45:05.607Z",
+        "url": "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerBlazes.mp4",
+        "poster": "https://images.unsplash.com/photo-1518173946687-a4c8a383392e?w=800&auto=format&fit=crop&q=80",
+        "watched": false,
+        "favorite": true
+      },
+      "sat": null,
+      "sun": null
+    },
+    "library": [
+      {
+        "id": "m-1",
+        "title": "Interstellar",
+        "genre": "Sci-Fi / Drama",
+        "addedBy": "stephane",
+        "addedAt": "2026-09-27T22:45:05.607Z",
+        "url": "https://vjs.zencdn.net/v/oceans.mp4",
+        "poster": "https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=800&auto=format&fit=crop&q=80",
+        "watched": false,
+        "favorite": true
+      },
+      {
+        "id": "m-2",
+        "title": "La La Land",
+        "genre": "Romance / Music",
+        "addedBy": "me",
+        "addedAt": "2026-09-27T22:45:05.607Z",
+        "url": "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4",
+        "poster": "https://images.unsplash.com/photo-1518709268805-4e9042af9f23?w=800&auto=format&fit=crop&q=80",
+        "watched": false,
+        "favorite": false
+      },
+      {
+        "id": "m-3",
+        "title": "About Time",
+        "genre": "Romance / Comedy",
+        "addedBy": "stephane",
+        "addedAt": "2026-09-27T22:45:05.607Z",
+        "url": "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerBlazes.mp4",
+        "poster": "https://images.unsplash.com/photo-1518173946687-a4c8a383392e?w=800&auto=format&fit=crop&q=80",
+        "watched": false,
+        "favorite": true
+      }
+    ]
+  },
+  "music": {
+    "playlist": [],
+    "currentIndex": 0,
+    "isPlaying": false
+  },
+  "session": {
+    "movie": {
+      "url": "https://fs01.lol/15550-the-mentalist-saison-1-streaming-complet-vf-vostfr.html",
+      "title": "Shared Video",
+      "isPlaying": true,
+      "currentTime": 0,
+      "action": "CHANGE_MOVIE",
+      "sender": "me",
+      "timestamp": 1790552759202,
+      "instanceId": "inst-1790552598113-css6hk"
+    },
+    "music": {
+      "trackIndex": 0,
+      "trackTitle": "Midnight Starlight",
+      "trackUrl": "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-3.mp3",
+      "isPlaying": false,
+      "currentTime": 0,
+      "action": "CHANGE_TRACK",
+      "sender": "stephane",
+      "timestamp": 1790552683070,
+      "instanceId": "inst-1790549465793-eknjhz"
+    }
+  }
+}
